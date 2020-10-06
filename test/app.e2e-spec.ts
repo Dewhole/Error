@@ -1,6 +1,6 @@
 import { Test } from '@nestjs/testing';
 import request from 'supertest';
-import { AppModule } from './../src/app.module';
+import { AppModule } from "./../src/AppModule";
 import { INestApplication, ValidationPipe, HttpStatus } from '@nestjs/common';
 import { Sequelize } from 'sequelize-typescript';
 import { ConfigService } from './../src/shared/config/config.service';

@@ -1,4 +1,7 @@
 import { Dialect } from 'sequelize/types';
+import * as dotenv from 'dotenv';
+
+dotenv.config();
 
 export const config = {
     database: {

@@ -1,11 +1,11 @@
 import { Module } from '@nestjs/common';
-import { UsersModule } from './users/users.module';
-import { SharedModule } from './shared/shared.module';
-import { PostsModule } from './posts/posts.module';
+import { MetodModule } from '/home/dewhole/Project/nestjs-sequelize-typescript/src/metod-post/modules/MetodModule';
+
 
 @Module({
-    imports: [UsersModule, PostsModule, SharedModule],
+    imports: [MetodModule],
     controllers: [],
     providers: [],
 })
-export class AppModule {}
+export class AppModule {
+}
