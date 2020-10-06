@@ -1,10 +1,10 @@
 import { Module } from '@nestjs/common';
-import { MetodPostController } from "/home/dewhole/Project/nestjs-sequelize-typescript/src/metod-post/controller/MetodPostController.1";
-import { MetodPostServiceService } from '/home/dewhole/Project/nestjs-sequelize-typescript/src/metod-post/service/metod-post-service.service';
-import { DatabaseModule } from '/home/dewhole/Project/nestjs-sequelize-typescript/src/database/database.module'
+import { MetodPostController } from "src/metod-post/controller/MetodPostController.1";
+import { MetodPostServiceService } from 'src/metod-post/service/metod-post-service.service';
+import { DatabaseModule } from 'src/database/database.module'
 
 @Module({
-    imports: [DatabaseModule],
+    imports: [],
     controllers: [MetodPostController],
     providers: [MetodPostServiceService],
 })

@@ -1,7 +1,7 @@
-import { Body, Controller, Delete, Get, Param, Post, Put } from '@nestjs/common';
-/* import { MetodPostEntity } from '/home/dewhole/Project/nestjs-sequelize-typescript/src/metod-post/entities/MetodPostEntity';
+import { Body, Controller, Delete, Get, Param, Post, Put, Query } from '@nestjs/common';
+import { MetodPostEntity } from '/home/dewhole/Project/nestjs-sequelize-typescript/src/metod-post/entities/MetodPostEntity';
 import { MetodPostDto } from '/home/dewhole/Project/nestjs-sequelize-typescript/src/metod-post/dto/MetodPostDto';
- */
+
 import {
     /* ApiCreatedResponse, */
     ApiBearerAuth,
@@ -13,43 +13,27 @@ import {
 @ApiTags('posts')
 export class MetodPostController {
     @Post()
-    @ApiBearerAuth()
- 
-    async create() {
-        return 'asdgasdgasdg';  
-    }
-} 
-
-/* 
-    @Get(':id')
-    getOneAction(@Param('id') id: string): string {
-        return "Todo Get One by id=" + id;
-    }
-
-    // Create
-    @Post()
-    createAction(@Body() todo: CreateMetodPOSTDto): CreateMetodPOSTDto {
-        console.log(todo);
-        return todo;
-    }
-
-
-    @Put(':id')
-    updateAction(
-        @Param('id') id: string,
-        @Body() todo: UpdateDto
-    ): UpdateDto {
-        console.log('Search by ID', id);
-        console.log(todo, 'saved');
-        return todo;
-    }
-
-    @Delete(':id')
-    deleteAction(@Param('id') id: string): string {
-        return "Delete by id=" + id;
-    }
-
+     async create() {
+        return 'This action adds a new cat';
 }
 
+@Get()
+findAll(@Query() query: MetodPostEntity) {
+  return `This action returns all cats (limit: ${query} items)`;
+}
 
- */
+@Get(':id')
+findOne(@Param('id') id: string) {
+  return `This action returns a #${id} cat`;
+}
+
+@Put(':id')
+update(@Param('id') id: string, @Body() metodPostDto: MetodPostDto) {
+  return `This action updates a #${id} cat`;
+}
+
+@Delete(':id')
+remove(@Param('id') id: string) {
+  return `This action removes a #${id} cat`;
+}
+}

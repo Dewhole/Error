@@ -1,17 +1,22 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
-import { Sequelize, Model } from 'node_modules/sequelize-typescript/dist/index.d';
+import { Sequelize, Column, Table, Model } from 'sequelize-typescript';
 
-@Entity()
+
+@Table({
+    tableName: 'LOL',
+  })
 export class MetodPostEntity extends Model<MetodPostEntity>  {
-  @PrimaryGeneratedColumn()
-  id: number;
+  @Column({
+     autoIncrement: true,
+     primaryKey: true,
+     })
+     id: number;
 
-  @Column()
+  @Column
   FirstName: string;
 
-  @Column()
+  @Column
   LastName: boolean;
 
-  @Column()
+  @Column
   Birth: Date;
 }
